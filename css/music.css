@@ -1,0 +1,20 @@
+/* 只作用于音乐页 */
+body[data-type="music"] .aplayer {
+  margin: 2.5rem auto;
+  max-width: 860px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+/* 歌词更轻 */
+body[data-type="music"] .aplayer-lrc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* 正文更松 */
+body[data-type="music"] .post-content {
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
