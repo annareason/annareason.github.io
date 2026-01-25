@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>分享 | 维娜丝小课堂</title><meta name="author" content="Cx330"><meta name="copyright" content="Cx330"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="📖 序｜小说里的光与影 有些话，只适合出现在小说里。 它们不讲道理，却直抵人心； 不一定惊天动地，却能在某个夜晚，轻轻击中你。 这一页，只收录我读过的小说中，那些让我停下来反复回味的句子。 不求完整剧情，只取片段心动。  📚 小说语录集 · 字字成舟 《诛仙》  天地不仁，以万物为刍狗。 九幽阴灵，诸天神魔，以我血躯，奉为牺牲。三生七世，永堕阎罗，只为情故，虽死不悔。 忽然有一滴泪珠，悄悄滴落">
+<meta property="og:type" content="website">
+<meta property="og:title" content="分享">
+<meta property="og:url" content="https://annareason.github.io/shuoshuo/index.html">
+<meta property="og:site_name" content="维娜丝小课堂">
+<meta property="og:description" content="📖 序｜小说里的光与影 有些话，只适合出现在小说里。 它们不讲道理，却直抵人心； 不一定惊天动地，却能在某个夜晚，轻轻击中你。 这一页，只收录我读过的小说中，那些让我停下来反复回味的句子。 不求完整剧情，只取片段心动。  📚 小说语录集 · 字字成舟 《诛仙》  天地不仁，以万物为刍狗。 九幽阴灵，诸天神魔，以我血躯，奉为牺牲。三生七世，永堕阎罗，只为情故，虽死不悔。 忽然有一滴泪珠，悄悄滴落">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://annareason.github.io/img/avatar1.jpg">
+<meta property="article:published_time" content="2026-01-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-16T16:39:17.620Z">
+<meta property="article:author" content="Cx330">
+<meta property="article:tag" content="机器学习,论文,Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://annareason.github.io/img/avatar1.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon1.jpg"><link rel="canonical" href="https://annareason.github.io/shuoshuo/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '分享',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><link rel="stylesheet" href="/css/music.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/懒加载loading.gif" data-original="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-hear"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/default_top_img.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">维娜丝小课堂</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-hear"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">分享</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h3 id="📖-序｜小说里的光与影">📖 序｜小说里的光与影</h3>
+<p>有些话，只适合出现在小说里。<br>
+它们不讲道理，却直抵人心；<br>
+不一定惊天动地，却能在某个夜晚，轻轻击中你。</p>
+<p>这一页，只收录我读过的小说中，那些让我停下来反复回味的句子。<br>
+不求完整剧情，只取片段心动。</p>
+<hr>
+<h2 id="📚-小说语录集-·-字字成舟">📚 小说语录集 · 字字成舟</h2>
+<h3 id="《诛仙》">《诛仙》</h3>
+<blockquote>
+<p>天地不仁，以万物为刍狗。</p>
+<p>九幽阴灵，诸天神魔，以我血躯，奉为牺牲。三生七世，永堕阎罗，只为情故，虽死不悔。</p>
+<p>忽然有一滴泪珠，悄悄滴落在玄火鉴上，片刻之后，化做白烟，袅袅升起。原来，狐狸也是有泪的吗？原来，妖孽也是有情的吗？</p>
+<p>原来这世上，真的有人可以为另一个人，舍弃一切。</p>
+<p>三生七世，永堕阎罗，只为护你一世周全。</p>
+<p>世间人心，远比妖魔更难看透。</p>
+<p>铃铛咽，百花凋，人影渐瘦鬓如霜。深情苦，一生苦，痴情只为无情苦。</p>
+<p>是什么让你痴狂，是什么让你痛楚？想起了滴血洞中那个伤心的骷髅？想起了火龙洞下一起跃入岩浆的妖狐？</p>
+<p>心碎是为了谁？疯狂是为了谁？不知道，是谁失手掉落了手中的兵器？又是谁，在黑暗中绝望惊呼？</p>
+<p>多少年后，你回首往事，还记得当年，曾有人对你，低声诉说心语吗？那因为年轻带著天真有些狂热的话语，你可还记得吗？就像深深镂刻在心间、不死不弃的誓言！你有没有张开双臂，将那心爱的人，拥抱在怀里？</p>
+<p>千万人来了、汇聚，万千人散了、离别，一日复一日，从来不曾改变，聚聚散散般的岁月。只有那庙中神佛金身神像，殿堂前不灭明灯，袅袅烟火，看尽了世事沧桑。</p>
+</blockquote>
+<hr>
+<h3 id="《异兽迷城》">《异兽迷城》</h3>
+<blockquote>
+<p>这个世界是虚假的，但爱是真的。</p>
+<p>如果觉醒者不断猎杀人类，在面对真正人类生命时，也不会再有敬畏和怜悯之心，最终变成嗜血的兽。人与兽的区别，一半在于身，一半在于心。</p>
+<p>你是谁？去往哪里？选择宽恕，还是死亡。</p>
+<p>兽有什么好怕的？你只要遵守规则，继续扮演无辜的羔羊，就不会有任何危险。它们与其说在扮演人类，不如说是拥有人类和异兽的两种人格和躯壳。</p>
+<p>生命之河，即选择之河。贪、嗔、痴、妄、生、死，皆为下选。唯幸运，六念不侵，溯流而上。</p>
+<p>“死猪送给萌羊的礼物并不是镯子，而是那个无论有什么危险都能第一时间前往他身边的自己。</p>
+<p>懦弱的人，苟延残喘都是一种贪心；勇敢的人，开天辟地也只是一种使命。</p>
+<p>几次走过鬼门关又回来的经验，越发让我相信一个事实：没有绝对的不可战胜的强者，也没有绝对的不堪一击的弱者。</p>
+<p>死去的人其实并不会彻底消失，他们会留在活着的人心中，变成他们的一部分。</p>
+<p>燃尽最后一丝生命，便是王冠；流干最后一滴鲜血，既是加冕。</p>
+<p>生未必是起点，死未必是终点，但在生与死之间，注定是一场盛大的错觉，一个美丽的废物。</p>
+<p>人类，值得一个奇迹。</p>
+</blockquote>
+<hr>
+<h3 id="《我不是戏神》">《我不是戏神》</h3>
+<blockquote>
+<p>在这个时代，人命渺小如尘埃。在这个时代，人类璀璨如星辰。</p>
+<p>叹息的风儿淹没观众的惊骇，戏袍微笑在沉寂的血海，灾厄在朝拜，信女在喝彩。</p>
+<p>他们始终待在那堵城墙之后，不曾见过那足以杀人的风雪。</p>
+<p>极光城的风筝总会熬过寒冬，日落西山的太阳，也终会从东方升起。</p>
+<p>台下看，红衣身在戏中。台上看，这雨间众生，又何尝不在戏中？</p>
+<p>我们见证众生的黄昏，我们追寻人类的黎明。</p>
+<p>没有人的命是贱的……就算是再肮脏的土壤，也可能盛开出璀璨的玫瑰。</p>
+<p>因为见到了光，就会拼命地想生长，往靠近光的方向。</p>
+<p>我丢了一颗心，还有我弟弟的命。</p>
+<p>待到黄昏落幕，在至暗的时代，我将应许你朝霞与蓝天。</p>
+<p>神道背弃了陈伶，但陈宴没有。</p>
+<p>鬼嘲深渊的猩红主宰，戏谑命运的无相之王。</p>
+<p>在无人问津的舞台上，完成一次掌声雷动的落幕。</p>
+<p>愿极光，永不消逝。</p>
+</blockquote>
+<hr>
+<h3 id="《十日终焉》">《十日终焉》</h3>
+<blockquote>
+<p>夏，只要想念，就会相见。</p>
+<p>这世上的道路有许多条，每个人都有属于自己的那条。</p>
+<p>所以有心向善的人不管做过什么错事，只要有一丝光芒照耀便会挣脱泥潭，奔向头顶的蓝天。而甘愿堕落的人无论头顶有多少阳光，他们也只会看见脚下万丈沟壑的深渊。</p>
+<p>就算前方的道路有万条荆棘，我也会带着你的光芒和遗憾踏平这里。</p>
+<p>我们年少时死在了过去，我们成年后依然死在了过去。</p>
+<p>我希望你能如同这清晨的湖泊一样，别人授予你一丝温暖，你便反射出耀眼的阳光，就算你的底部黑暗寒冷，但也要报以这个世界如涟漪般的温柔。</p>
+<p>初见仅是桃源，再见却已是深渊。</p>
+<p>岁月本长，而忙者自促；天地本宽，而鄙者自隘。</p>
+<p>若许流年，老了红颜闲却梦。</p>
+<p>极道万岁！</p>
+<p>这世上没有绝望的处境，只有对处境绝望的人。</p>
+<p>死亡不是终点，遗忘才是。</p>
+<p>我是乔家劲， 我要开始说谎了。</p>
+</blockquote>
+<hr>
+<h3 id="《我在精神病院学斩神》">《我在精神病院学斩神》</h3>
+<blockquote>
+<p>若黯夜终临，吾必立于万万人前，横刀向渊，血染苍穹。</p>
+<p>你救了我的全世界，作为交换，你的世界我帮你守十年。</p>
+<p>我大夏诸神，与大夏子民共存亡！！有必守之地，有必守之人，有必守之信仰！</p>
+<p>我再说最后一次…大夏境内，神明禁行。</p>
+<p>若结果并非所愿，那就在尘埃落定前奋力一搏。</p>
+<p>小子，这一刀，你要看好了。这一刀，会很帅。</p>
+<p>晚辈林七夜，恭送赵空城将军，凯旋！</p>
+<p>世间都说人类不可斩神，我周平，偏要当那第一个斩神之人。</p>
+<p>纯粹的善，是拯救不了这个世界的，唯有恐惧，可止兵戈。</p>
+<p>‍我曾在黑暗中无数次的试图了结我的生命，但光明却一次又一次的把我救回来。</p>
+<p>或许我存在的唯一意义，就是见证这段曾经存在过的历史。</p>
+<p>大夏军人，死神退避！存者……必生。</p>
+<p>跑啊！队长！跑！ 一直往前跑！不要回头！只要你能跑赢时间长河，终有一天，我们都会回到你的身后！</p>
+<p>我只要这片夜幕之下，我所珍视之人，万世平安；我所敌对之人，神魂俱灭；我要我们命运由己，我要我们所向披靡！</p>
+<p>我明明在这里，却又不在这里……我就像是一个误入此地的旁观者，什么也改变不了，或许我存在的唯一意义，就是见证这段曾经存在过的历史。</p>
+<p>那件染血的浅蓝色斗篷，轻轻飘飘落在了大地之上，像一块刻满功勋的无名墓碑，令埋葬于此的亡魂，陷入永恒的沉眠。</p>
+<p>若黯夜终临，吾必立与万万人前，横刀向渊，血染天穹！可这一次我的身后不仅有万万人，还有那孩子的全世界！</p>
+</blockquote>
+<hr>
+<h3 id="✨-尾声｜留白">✨ 尾声｜留白</h3>
+<p>文字不会替你做决定，<br>
+但它会在你犹豫时，陪你站一会儿。</p>
+<p>若有一句，曾与你心意相通，<br>
+那这页，便不算空。</p>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/懒加载loading.gif" data-original="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Cx330</div><div class="author-info-description">混吃等死的一个上进者</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/annareason" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎进入维娜丝小课堂,希望你得到所需知识的同时,也能被娜扎迷得神魂颠倒</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/22/butterfly/" title="基于 Butterfly 对 Hexo 的音乐与影视页面美化"><img src="/img/懒加载loading.gif" data-original="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="基于 Butterfly 对 Hexo 的音乐与影视页面美化"/></a><div class="content"><a class="title" href="/2026/01/22/butterfly/" title="基于 Butterfly 对 Hexo 的音乐与影视页面美化">基于 Butterfly 对 Hexo 的音乐与影视页面美化</a><time datetime="2026-01-22T04:46:44.000Z" title="发表于 2026-01-22 12:46:44">2026-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/09/%E5%8D%B7%E7%A7%AF/" title="卷积"><img src="/img/懒加载loading.gif" data-original="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="卷积"/></a><div class="content"><a class="title" href="/2026/01/09/%E5%8D%B7%E7%A7%AF/" title="卷积">卷积</a><time datetime="2026-01-09T02:53:15.000Z" title="发表于 2026-01-09 10:53:15">2026-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/08/hello-world/" title="Hello World"><img src="/img/懒加载loading.gif" data-original="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2026/01/08/hello-world/" title="Hello World">Hello World</a><time datetime="2026-01-08T10:37:17.674Z" title="发表于 2026-01-08 18:37:17">2026-01-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A4%A7%E6%9D%82%E7%83%A9/"><span class="card-category-list-name">大杂烩</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 1.1em; color: #999">总结</a> <a href="/tags/python/" style="font-size: 1.1em; color: #999">python</a> <a href="/tags/Butterfly/" style="font-size: 1.1em; color: #999">Butterfly</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 1.1em; color: #999">实验</a> <a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 1.1em; color: #999">美化</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-25T17:39:25.763Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Cx330</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-z689.vercel.app/api/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-z689.vercel.app/api/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

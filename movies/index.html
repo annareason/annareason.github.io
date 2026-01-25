@@ -1,0 +1,613 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>影视 | 维娜丝小课堂</title><meta name="author" content="Cx330"><meta name="copyright" content="Cx330"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="🎬 序：剧集为卷，品人间百态 比起电影的浓缩，更偏爱电视剧的绵长——用数十集的篇幅，铺陈一段人生、一个故事、一种情怀。 那些陪伴我们度过深夜、填满碎片时光的剧集，早已不只是娱乐，更是情绪的共鸣、精神的慰藉。 这里收录我钟爱的电视剧集，愿你能在一帧一画里，寻得陪伴、感动与力量。  🖼️ 剧集海报墙 · 一眼心动                          玉茗茶骨       爱情 &#x2F; 悬">
+<meta property="og:type" content="website">
+<meta property="og:title" content="影视">
+<meta property="og:url" content="https://annareason.github.io/movies/index.html">
+<meta property="og:site_name" content="维娜丝小课堂">
+<meta property="og:description" content="🎬 序：剧集为卷，品人间百态 比起电影的浓缩，更偏爱电视剧的绵长——用数十集的篇幅，铺陈一段人生、一个故事、一种情怀。 那些陪伴我们度过深夜、填满碎片时光的剧集，早已不只是娱乐，更是情绪的共鸣、精神的慰藉。 这里收录我钟爱的电视剧集，愿你能在一帧一画里，寻得陪伴、感动与力量。  🖼️ 剧集海报墙 · 一眼心动                          玉茗茶骨       爱情 &#x2F; 悬">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://annareason.github.io/img/avatar1.jpg">
+<meta property="article:published_time" content="2026-01-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-16T15:55:00.475Z">
+<meta property="article:author" content="Cx330">
+<meta property="article:tag" content="机器学习,论文,Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://annareason.github.io/img/avatar1.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon1.jpg"><link rel="canonical" href="https://annareason.github.io/movies/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '影视',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><link rel="stylesheet" href="/css/music.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/懒加载loading.gif" data-original="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-hear"></i><span> 关于笔者</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/img/default_top_img.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">维娜丝小课堂</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comments"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fas fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fas fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-hear"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">影视</h1></div></header><main class="layout" id="content-inner"><div id="page"><div class="container" id="article-container"><h3 id="🎬-序：剧集为卷，品人间百态">🎬 序：剧集为卷，品人间百态</h3>
+<p>比起电影的浓缩，更偏爱电视剧的绵长——用数十集的篇幅，铺陈一段人生、一个故事、一种情怀。<br>
+那些陪伴我们度过深夜、填满碎片时光的剧集，早已不只是娱乐，更是情绪的共鸣、精神的慰藉。<br>
+这里收录我钟爱的电视剧集，愿你能在一帧一画里，寻得陪伴、感动与力量。</p>
+<hr>
+<h3 id="🖼️-剧集海报墙-·-一眼心动">🖼️ 剧集海报墙 · 一眼心动</h3>
+<div class="poster-wall" style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;">
+  <!-- 1 玉茗茶骨 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/36686673/" target="_blank" rel="noopener">
+      <img src="/img/movie/玉茗茶骨.webp"
+           alt="玉茗茶骨" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">玉茗茶骨</p>
+      <span style="font-size:12px;color:#999;">爱情 / 悬疑 / 古装</span>
+    </a>
+  </div>
+  <!-- 2 庆余年 第一季 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/25853071/" target="_blank" rel="noopener">
+      <img src="/img/movie/庆余年1.webp"
+           alt="庆余年 第一季" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">庆余年 · 第一季</p>
+      <span style="font-size:12px;color:#999;">剧情 / 古装</span>
+    </a>
+  </div>
+  <!-- 3 庆余年 第二季 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/34937650/" target="_blank" rel="noopener">
+      <img src="/img/movie/庆余年2.webp"
+           alt="庆余年 第二季" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">庆余年 · 第二季</p>
+      <span style="font-size:12px;color:#999;">剧情 / 古装</span>
+    </a>
+  </div>
+  <!-- 4 去有风的地方 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35662223/" target="_blank" rel="noopener">
+      <img src="/img/movie/去有风的地方.webp"
+           alt="去有风的地方" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">去有风的地方</p>
+      <span style="font-size:12px;color:#999;">剧情 / 爱情</span>
+    </a>
+  </div>
+  <!-- 5 大奉打更人 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35490175/" target="_blank" rel="noopener">
+      <img src="/img/movie/大奉打更人.webp"
+           alt="大奉打更人" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">大奉打更人</p>
+      <span style="font-size:12px;color:#999;">喜剧 / 悬疑 / 奇幻 / 古装</span>
+    </a>
+  </div>
+  <!-- 6 长安的荔枝 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35651341/" target="_blank" rel="noopener">
+      <img src="/img/movie/长安的荔枝.webp"
+           alt="长安的荔枝" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">长安的荔枝</p>
+      <span style="font-size:12px;color:#999;">剧情 / 古装</span>
+    </a>
+  </div>
+  <!-- 7 警察荣誉 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35429466/" target="_blank" rel="noopener">
+      <img src="/img/movie/警察荣誉.webp"
+           alt="警察荣誉" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">警察荣誉</p>
+      <span style="font-size:12px;color:#999;">剧情</span>
+    </a>
+  </div>
+  <!-- 8 梦华录 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35231822/" target="_blank" rel="noopener">
+      <img src="/img/movie/梦华录.webp"
+           alt="梦华录" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">梦华录</p>
+      <span style="font-size:12px;color:#999;">剧情 / 爱情 / 古装</span>
+    </a>
+  </div>
+  <!-- 9 剑王朝 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/27186311/" target="_blank" rel="noopener">
+      <img src="/img/movie/剑王朝.webp"
+           alt="剑王朝" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">剑王朝</p>
+      <span style="font-size:12px;color:#999;">剧情 / 古装</span>
+    </a>
+  </div>
+  <!-- 10 少林寺传奇藏经阁 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/25752324/" target="_blank" rel="noopener">
+      <img src="/img/movie/少林寺传奇藏经阁.webp"
+           alt="少林寺传奇藏经阁" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">少林寺传奇·藏经阁</p>
+      <span style="font-size:12px;color:#999;">武侠 / 古装</span>
+    </a>
+  </div>
+  <!-- 11 深情眼 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/37081285/" target="_blank" rel="noopener">
+      <img src="/img/movie/深情眼.webp"
+           alt="深情眼" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">深情眼</p>
+      <span style="font-size:12px;color:#999;">剧情 / 爱情</span>
+    </a>
+  </div>
+  <!-- 12 无与伦比的美丽 -->
+  <div style="width:160px;text-align:center;">
+    <a href="https://movie.douban.com/subject/35256089/" target="_blank" rel="noopener">
+      <img src="/img/movie/无与伦比的美丽.webp"
+           alt="无与伦比的美丽" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+      <p style="margin:8px 0 0;font-size:14px;">无与伦比的美丽</p>
+      <span style="font-size:12px;color:#999;">剧情 / 爱情</span>
+    </a>
+  </div>
+</div>
+<hr>
+<h2 id="📺-分类片单-·-循心而选">📺 分类片单 · 循心而选</h2>
+<h3 id="古装-权谋-古装叙事">古装 / 权谋 / 古装叙事</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">剧集名称</th>
+<th style="text-align:left">集数</th>
+<th style="text-align:left">核心感受</th>
+<th style="text-align:left">剧情链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">玉茗茶骨</td>
+<td style="text-align:left">36集</td>
+<td style="text-align:left">颠覆性的“女强男茶”，八百个心眼子的权谋博弈，与茶文化的深度缝合</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/36686673/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">庆余年 第一季</td>
+<td style="text-align:left">46集</td>
+<td style="text-align:left">穿越文的背景设定，理想与现实的交错，在权谋中坚守本心的人物弧光</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/25853071/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">庆余年 第二季</td>
+<td style="text-align:left">36集</td>
+<td style="text-align:left">延续权谋主线，范闲从棋子走向棋手，加强群像塑造与人物关系发展</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/34937650/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">大奉打更人</td>
+<td style="text-align:left">40集</td>
+<td style="text-align:left">轻松幽默与热血正义并存，角色立体且悬疑紧凑，小人物亦践行大义</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35490175/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">长安的荔枝</td>
+<td style="text-align:left">35集</td>
+<td style="text-align:left">从小人物视角切入盛唐秩序，现实感强，历史与人性交织</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35651341/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">梦华录</td>
+<td style="text-align:left">40集</td>
+<td style="text-align:left">古典美学与人物成长并行，江南风貌与生活细节兼具，女性成长熠熠生辉</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35231822/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">剑王朝</td>
+<td style="text-align:left">34集</td>
+<td style="text-align:left">剑与策略并存，世界观独特，人物命运线成为主要吸引点</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/27186311/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">少林寺传奇藏经阁</td>
+<td style="text-align:left">63集</td>
+<td style="text-align:left">传统的武侠影视，极致细腻的情感流动，非常实在的打斗戏份</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/25752324/">豆瓣</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="都市-情感-治愈向">都市 / 情感 / 治愈向</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">剧集名称</th>
+<th style="text-align:left">集数</th>
+<th style="text-align:left">核心感受</th>
+<th style="text-align:left">剧情链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">去有风的地方</td>
+<td style="text-align:left">40集</td>
+<td style="text-align:left">节奏舒缓，田园治愈系，人物从迷茫到自我重建的过程自然呈现</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35662223/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">无与伦比的美丽</td>
+<td style="text-align:left">40集</td>
+<td style="text-align:left">男女主破镜重圆的情感性，过程中的成长与鲜活，脑洞大开的剧本设置</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35256089/">豆瓣</a></td>
+</tr>
+<tr>
+<td style="text-align:left">深情眼</td>
+<td style="text-align:left">26集</td>
+<td style="text-align:left">双向奔赴的救赎与自然流淌的深情，爱的足够热烈，颜值超级在线</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/37081285/">豆瓣</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="现实题材-群像叙事">现实题材 / 群像叙事</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">剧集名称</th>
+<th style="text-align:left">集数</th>
+<th style="text-align:left">核心感受</th>
+<th style="text-align:left">剧情链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">警察荣誉</td>
+<td style="text-align:left">38集</td>
+<td style="text-align:left">聚焦基层警务日常与新警成长，人物群像真实接地气，生活烟火感浓厚</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://movie.douban.com/subject/35429466/">豆瓣</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="📝-深度剧评-·-光影絮语">📝 深度剧评 · 光影絮语</h3>
+<details>
+<summary>《玉茗茶骨》：茶道为骨，情与谜共沸</summary>
+<p>娜扎真的好美好美好美，哇哇哇，美到冒泡了！！剧情设定挺新颖的，打破了传统的男性后宫文的传统，“女强男茶”的设定别出心裁。剧情也极多的反转，特别是白颖生黑化那几集，爽飞了！对了，还有二小姐大堂上硬怼祖母，好帅，女性的力量展露无遗，看得我一生鸡皮疙瘩！男女主的智商也非常在线，一点都不把观众当傻子，都非常合理。</p>
+</details>
+<details>
+<summary>《庆余年 第一季 / 第二季》：权谋江湖的笑与思考</summary>
+<p>《庆余年》系列在权谋叙事中融入恰到好处的幽默感，成功搭建起一个既宏大又鲜活的世界观。第一季以范闲的成长为核心，将朝堂博弈、势力角逐与个人命运紧密交织，人物智谋与时代洪流相互映照；第二季则在此基础上继续推进主线，人物关系更为纵深，权力结构的复杂性也进一步显现。</p>
+<p>该剧最难得之处，在于权谋的紧张感与轻松诙谐并行不悖——既有步步为营的策略对抗，也不乏令人会心一笑的情节设计，使观剧体验张弛有度。角色塑造尤为出彩，其中“鸡腿姑娘”以自然灵动的气质成为情感线中的亮色，令人印象深刻。</p>
+<p>而范闲朝堂作诗的名场面，更是全剧高光时刻之一：情绪层层递进，气势陡然拉满，配合周深《借过一下》的音乐渲染，热血与悲壮交织，情感冲击力极强。整体而言，《庆余年》以“智”立骨、以“趣”润色，称得上一部真正做到“智趣并存”的权谋佳作。</p>
+</details>
+<details>
+<summary>《梦华录》：古偶里的生活美学与人之常情</summary>
+<p>该剧以赵盼儿等女性角色在大城市中的谋生、互助与成长为主线，将镜头对准古装背景下的“人之常情”，情感表达克制而真实，整体气质明显跳脱出套路化的古偶浪漫叙事。人物命运的展开更贴近现实经验，也让故事具有更强的代入感。</p>
+<p>在制作层面，服化道考究，画面构图稳定，情绪调度细腻，整体呈现出接近电影质感的完成度。同时，剧集并未止步于情感叙事，而是自然引出了对性别角色与现代价值观的讨论，使作品在观赏性之外具备一定思考深度。</p>
+<p>刘亦菲饰演的赵盼儿气质沉稳而有力量，将女性独立、自强与清醒的精神内核展现得相当到位，角色既温柔也坚定，为整部剧奠定了鲜明而有分量的女性视角。</p>
+</details>
+<details>
+<summary>《去有风的地方》：田园缓叙的温柔力量</summary>
+<p>该剧以大理的田园风光为背景，以缓慢而克制的节奏铺陈人物在自然与时间流动中重建自我的过程。叙事并不依赖密集的高潮与反转，而是将重心放在日常细节与情绪沉淀之上，让观众感受到“慢下来生活”的另一种可能，整体画面诗意而舒展。</p>
+<p>这是一部能让人真正静下心来的作品，所呈现的生活状态，或许正是许多人内心向往的样子。值得一提的是，郁可唯演唱的《去有风的地方》与剧集气质高度契合，旋律温柔而治愈，也成为不少观众因歌入剧、因剧沉浸的重要原因。</p>
+</details>
+<details>
+<summary>《大奉打更人》：喜剧下的奇幻与悬疑</summary>
+<p>在喜剧外壳之下包裹着奇幻与悬疑内核，整体节奏明快，故事推进干脆利落。轻松幽默的表达有效削弱了题材本身的沉重感，但并未影响剧情深度，反而让世界观与案件线更具可看性。</p>
+<p>角色设定鲜明，各自立场清晰，在探案与冒险过程中逐步展开。悬疑线与奇幻设定相互交织，使剧情始终保持张力，既能当爽剧看，也经得起细想。</p>
+<p>“上天难欺，下民易虐，尔俸尔禄，民膏民脂”这一核心价值贯穿全剧与原著始终，既是人物行为的道德底色，也让故事在娱乐性之外多了一层现实指向。尤其是最后十集，剧情格局陡然拉升，情绪集中释放，观感相当热血。</p>
+</details>
+<details>
+<summary>《长安的荔枝》：历史叙事里的现实隐喻</summary>
+<p>以小人物视角切入盛唐社会运转的肌理，在看似轻巧的叙事中铺陈出秩序、权力与人性的多重面向。剧集在历史书写中不断嵌入现实隐喻，使故事既具时代质感，也保留了足够的现实指向与讽刺意味。</p>
+<p>剧情推进中，计谋设计尤为出彩，结局的布局与反转令人称道。郑平安这一角色尤为动人，明知前路凶险，却仍选择迎难而上，其行为并非出于功利，而是源自内心的善良与担当，情感表达极具冲击力，令人动容。</p>
+<p>全剧的讽刺性在收尾处被推至极致：底层人物奔波忙碌、以命相搏，只为回应上层一句轻描淡写的戏言；而最终，高高在上的权力者却并未真正尝到那一口最鲜美的荔枝。历史叙事在此完成回环，也留下了意味深长的现实回响。</p>
+</details>
+<details>
+<summary>《剑王朝》：宏大设定下的人物命运</summary>
+<p>跳脱了多数玄幻IP剧开篇铺陈世界观的常规操作，以一场十年后的刺杀切入，再倒叙蘅王诛杀巴山剑侠的过往，节奏利落紧凑，江湖与庙堂的对抗，最终建立的仁义秩序。以剑为核心的设定，也赋予了剧集武打风格独特的气质————剑术舒展流畅，一招一式皆透着轻捷飘逸之美。特别赞扬小姨，这个妆造简直不要太美啊！</p>
+</details>
+<details>
+<summary>《少林寺传奇藏经阁》：武侠情怀与江湖叙事</summary>
+<p>延续了《少林寺传奇》系列一贯的传统武侠风格，以拳拳到肉的真功夫作为叙事与动作表达的核心，动作设计扎实，江湖气息浓厚。在保持系列基调的同时，剧集也进行了新的尝试，在“真功夫”之外融入了更多诙谐幽默的元素，使整体气质更加轻松。</p>
+<p>人物塑造上，各角色性格特征更为鲜明，情感线的比重也有所提升。其中，徐子豪与小泽杏子之间的情感纠葛贯穿始终，在家国立场与个人情感之间不断拉扯，情绪表达克制却有力，结局尤为令人唏嘘，颇具江湖悲情意味。</p>
+</details>
+<details>
+<summary>《无与伦比的美丽》：都市自我与情感探索</summary>
+<p>将视角聚焦于都市职场女性的自我价值与情感选择，在叙事上更强调人物成长过程中的心理变化与情绪细节刻画。剧情贴近现实语境，对职场压力、亲密关系与自我认同的呈现较为克制，因此具备较强的真实感与共鸣基础。</p>
+<p>演员表现为剧集增添了不少观赏性，其中娜扎的出现尤为亮眼，无论外形气质还是角色契合度都极具存在感，也成为不少观众持续追剧的重要动力。整体而言，这是一部以人物情绪推进为核心的都市题材作品。</p>
+</details>
+<details>
+<summary>《深情眼》：细腻克制的现代情绪风景</summary>
+<p>以现代都市背景讲述了一段内敛细腻的情感故事，聚焦于人物之间的心理变化与真实互动。剧情围绕辞职回乡的叶濛和拥有深情眼神的李靳屿展开，两人在返乡小镇的偶遇中逐步建立起温暖、互相治愈的关系，呈现出一种贴近现实的情感节奏。</p>
+<p>剧集在叙事与镜头美学上都赢得较高评价：氛围感十足的画面和精致构图让每一帧都富有呼吸感，视觉呈现接近电影质感，许多观众表示画面美到可以截成壁纸。 同时，男女主角的互动被评价为自然、富有感染力，尤其是他们在日常生活中的小动作、小表情，增强了观众的共鸣与代入感。</p>
+<p>情感线方面，《深情眼》并非单纯堆叠浪漫桥段，而是在相互陪伴与信任重建中呈现双向治愈的爱情内核，这种反套路的情绪推进也是网友热议的重点。 张予曦在剧中的表现尤为吸睛，美得像从画里走出来一样，也成为不少观众追剧的重要理由。</p>
+</details>
+<details>
+<summary>《警察荣誉》：现实题材中的真实力量</summary>
+<p>《警察荣誉》以基层派出所的日常警务生活为切入口，通过群像叙事展现一线警察的工作状态与精神世界。剧集并未刻意制造戏剧化冲突，而是将镜头对准琐碎却真实的出警现场、办案流程与人情往来，在克制的叙事中呈现职业的重量。</p>
+<p>人物塑造是该剧的一大亮点。不同性格、不同阶段的警务人员在同一空间中并行成长，既有业务能力的磨炼，也有情绪压力与心理困境的展现。许多情节源自现实经验，处理方式冷静而不煽情，使观众更容易产生信任感与代入感。</p>
+<p>不少评价认为，《警察荣誉》真正打动人的地方在于其“去英雄化”的表达——没有悬浮的高光时刻，却在日复一日的坚守中凸显职业尊严与个体价值，也由此引发了关于职业群像、身份认同与个人成长的持续讨论。整体而言，这是一部以真实为底色、以人物为核心的现实题材佳作。</p>
+</details>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/懒加载loading.gif" data-original="/img/avatar1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Cx330</div><div class="author-info-description">混吃等死的一个上进者</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/annareason" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎进入维娜丝小课堂,希望你得到所需知识的同时,也能被娜扎迷得神魂颠倒</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/01/22/butterfly/" title="基于 Butterfly 对 Hexo 的音乐与影视页面美化"><img src="/img/懒加载loading.gif" data-original="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="基于 Butterfly 对 Hexo 的音乐与影视页面美化"/></a><div class="content"><a class="title" href="/2026/01/22/butterfly/" title="基于 Butterfly 对 Hexo 的音乐与影视页面美化">基于 Butterfly 对 Hexo 的音乐与影视页面美化</a><time datetime="2026-01-22T04:46:44.000Z" title="发表于 2026-01-22 12:46:44">2026-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/09/%E5%8D%B7%E7%A7%AF/" title="卷积"><img src="/img/懒加载loading.gif" data-original="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="卷积"/></a><div class="content"><a class="title" href="/2026/01/09/%E5%8D%B7%E7%A7%AF/" title="卷积">卷积</a><time datetime="2026-01-09T02:53:15.000Z" title="发表于 2026-01-09 10:53:15">2026-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/08/hello-world/" title="Hello World"><img src="/img/懒加载loading.gif" data-original="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/error_post_page.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2026/01/08/hello-world/" title="Hello World">Hello World</a><time datetime="2026-01-08T10:37:17.674Z" title="发表于 2026-01-08 18:37:17">2026-01-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A4%A7%E6%9D%82%E7%83%A9/"><span class="card-category-list-name">大杂烩</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 1.1em; color: #999">总结</a> <a href="/tags/python/" style="font-size: 1.1em; color: #999">python</a> <a href="/tags/Butterfly/" style="font-size: 1.1em; color: #999">Butterfly</a> <a href="/tags/%E5%AE%9E%E9%AA%8C/" style="font-size: 1.1em; color: #999">实验</a> <a href="/tags/%E7%BE%8E%E5%8C%96/" style="font-size: 1.1em; color: #999">美化</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-25T17:39:25.763Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Cx330</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.4/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-z689.vercel.app/api/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'https://twikoo-z689.vercel.app/api/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
