@@ -4,11 +4,86 @@
   
     
     <entry>
+      <title>编译原理笔记：LL(1)/LR(0)/SLR/LR(1)/LALR(1)文法</title>
+      <link href="/2026/01/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9ALL-1-LR-0-SLR-LR-1-LALR-1-%E6%96%87%E6%B3%95/"/>
+      <url>/2026/01/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9ALL-1-LR-0-SLR-LR-1-LALR-1-%E6%96%87%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这部分内容不算太难，可以看笔记直接依葫芦画瓢，也可以看完b站后当复习整理笔记检验自己用</p><h2 id="LL-1-文法">LL(1)文法</h2><p><img src="1.jpg" alt="文法"><br><img src="1.jpg" alt="文法"></p><hr><h2 id="LR-0-文法">LR(0)文法</h2><p><img src="3.jpg" alt="文法"><br><img src="4.jpg" alt="文法"></p><hr><h2 id="SLR文法">SLR文法</h2><p><img src="5.jpg" alt="文法"></p><hr><h2 id="LR-1-文法">LR(1)文法</h2><p><img src="6.jpg" alt="文法"></p><hr><h2 id="LALR-1-文法">LALR(1)文法</h2><p><img src="7.jpg" alt="文法"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理，总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编译原理笔记：NFA/DFA</title>
+      <link href="/2026/01/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9ANFA-DFA/"/>
+      <url>/2026/01/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9ANFA-DFA/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="一、正则表达式-→-NFA">一、正则表达式 → NFA</h2><h3 id="转换步骤">转换步骤</h3><ol><li><p>将正则表达式按结构拆分</p><ul><li>连接（·）</li><li>或（<code>|</code>）</li><li>闭包（<code>*</code>）</li></ul></li><li><p>为每一种结构使用固定的 NFA 模板</p><ul><li>连接：前后直接相连</li><li>或：使用 ε 分叉</li><li>闭包：加回环 + ε 跳转</li></ul></li><li><p>按正则表达式从左到右的结构顺序逐步拼接</p></li><li><p>最终保证只有</p><ul><li>一个开始状态</li><li>一个终止状态</li></ul></li></ol><hr><h2 id="二、NFA-→-DFA（子集构造法）">二、NFA → DFA（子集构造法）</h2><h3 id="转换步骤-2">转换步骤</h3><ol><li><p>计算初始状态的 ε-closure<br>→ 作为 DFA 的开始状态</p></li><li><p>将每一个 NFA 状态集合当作一个 DFA 状态</p></li><li><p>对每个 DFA 状态：</p><ul><li>分别输入每个字符（如 a、b）</li><li>找所有可达状态</li><li>对结果再求 ε-closure</li></ul></li><li><p>若产生新的状态集合，则加入状态表</p></li><li><p>重复以上步骤，直到不再出现新集合</p></li><li><p>根据状态表画出 DFA</p></li></ol><h3 id="注意事项">注意事项</h3><ul><li><p>集合中状态顺序无关 <code>&#123;1,3,5&#125;</code> 与 <code>&#123;5,3,1&#125;</code> 是同一状态</p></li><li><p>一定要先走字符边，再求 ε-closure</p></li><li><p>判断终态的规则：集合中只要包含 NFA 的终态，该 DFA 状态就是终态</p></li></ul><hr><h2 id="三、DFA-最小化">三、DFA 最小化</h2><h3 id="最小化步骤">最小化步骤</h3><ol><li><p>初始划分状态集合</p><ul><li>终态集合</li><li>非终态集合</li></ul></li><li><p>在同一集合中检查状态是否等价</p><ul><li>对每个输入字符</li><li>看转移后是否仍落在同一集合</li></ul></li><li><p>若转移结果不同，则必须拆分集合</p></li><li><p>对新集合继续重复判断</p></li><li><p>直到所有集合都不能再被拆分</p></li><li><p>每个集合选一个代表状态，构造最小 DFA</p></li><li></li></ol><hr><h2 id="📸-手写笔记对照">📸 手写笔记对照</h2><p>上述内容过于抽象，附上我的手写例题：<br><img src="1.jpg" alt="NFA-DFA"><br><img src="2.jpg" alt="NFA-DFA"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理，总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《编译原理笔记：FIRST集与 FOLLOW集的计算方法与实战》</title>
+      <link href="/2026/01/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9AFIRST%E9%9B%86%E4%B8%8E-FOLLOW%E9%9B%86%E7%9A%84%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E5%AE%9E%E6%88%98/"/>
+      <url>/2026/01/27/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%9AFIRST%E9%9B%86%E4%B8%8E-FOLLOW%E9%9B%86%E7%9A%84%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E4%B8%8E%E5%AE%9E%E6%88%98/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="基本概念">基本概念</h2><h3 id="FIRST-α">FIRST(α)</h3><p>从符号串 <code>α</code> 推导的串中<strong>首终结符号</strong>的集合。<br>简单来说，就是 <code>α</code> 能推导出的所有句子的第一个终结符是什么。</p><h3 id="FOLLOW-A">FOLLOW(A)</h3><p>在某些句型中<strong>紧跟在非终结符 A 右边</strong>的终结符号的集合。<br>它描述了非终结符 A 在语法中可能的“后续语境”。</p><hr><h2 id="计算方法">计算方法</h2><h3 id="FIRST-集计算步骤">FIRST 集计算步骤</h3><ol><li><strong>基础规则</strong>：若产生式为 <code>X → a...</code>（<code>a</code> 是终结符），则直接将 <code>a</code> 加入 <code>FIRST(X)</code>。</li><li><strong>非终结符推导</strong>：若产生式为 <code>X → Y₁Y₂...Yₙ</code>（<code>Yᵢ</code> 是非终结符）：<ul><li>先把 <code>FIRST(Y₁)</code> 中除 <code>ε</code> 外的符号加入 <code>FIRST(X)</code></li><li>若 <code>FIRST(Y₁)</code> 包含 <code>ε</code>，则继续将 <code>FIRST(Y₂)</code> 中除 <code>ε</code> 外的符号加入，以此类推</li><li>若所有 <code>Yᵢ</code> 的 <code>FIRST</code> 集都包含 <code>ε</code>，则将 <code>ε</code> 加入 <code>FIRST(X)</code></li></ul></li></ol><h3 id="FOLLOW-集计算步骤">FOLLOW 集计算步骤</h3><ol><li><strong>起始符号规则</strong>：若 <code>S</code> 是文法的开始符号，则将结束符 <code>#</code> 放入 <code>FOLLOW(S)</code>。</li><li><strong>产生式推导</strong>：<ul><li>若产生式为 <code>A → BC</code>，则将 <code>FIRST(C)</code> 中除 <code>ε</code> 外的符号加入 <code>FOLLOW(B)</code>。</li><li>若产生式为 <code>A → B</code> 或 <code>A → BC</code> 且 <code>FIRST(C)</code> 包含 <code>ε</code>，则将 <code>FOLLOW(A)</code> 加入 <code>FOLLOW(B)</code>。</li></ul></li></ol><hr><h2 id="实战例题-1：算术表达式文法">实战例题 1：算术表达式文法</h2><p>我们用一个经典的算术表达式文法来演示完整计算过程：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">E → TE&#x27;</span><br><span class="line">E&#x27; → +TE&#x27; | ε</span><br><span class="line">T → FT&#x27;</span><br><span class="line">T&#x27; → *FT&#x27; | ε</span><br><span class="line">F → (E) | i</span><br></pre></td></tr></table></figure><h3 id="第一步：计算所有-FIRST-集">第一步：计算所有 FIRST 集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FIRST(E) = FIRST(T) = &#123; (, i &#125;</span><br><span class="line">FIRST(E&#x27;) = &#123; +, ε &#125;</span><br><span class="line">FIRST(T) = FIRST(F) = &#123; (, i &#125;</span><br><span class="line">FIRST(T&#x27;) = &#123; *, ε &#125;</span><br><span class="line">FIRST(F) = &#123; (, i &#125;</span><br></pre></td></tr></table></figure><h3 id="第二步：计算所有-FOLLOW-集">第二步：计算所有 FOLLOW 集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FOLLOW(E) = &#123; ), # &#125;  // #是由于开始符号，）因为跟在E后面</span><br><span class="line">FOLLOW(E&#x27;) = FOLLOW(E) = &#123; ), # &#125;   // 由1式将FOLLOW(E)加入FOLLOW(E&#x27;)</span><br><span class="line">FOLLOW(T) = FIRST(E&#x27;) ∪ FOLLOW(E) = &#123; +, ), # &#125;  // 由1/2式将FIRST(E&#x27;)中除ε加入FOLLOW(T)；由于FIRST(E&#x27;)有ε，将FOLLOW(E)加入FOLLOW(T)</span><br><span class="line">FOLLOW(T&#x27;) = FOLLOW(T) = &#123; +, ), # &#125;  // 由3式将FOLLOW(T)加入FOLLOW(T&#x27;)</span><br><span class="line">FOLLOW(F) = FIRST(T&#x27;) ∪ FOLLOW(T) = &#123; *, +, ), # &#125;  //  由3式将FIRST(T&#x27;)中除ε加入FOLLOW(F)；由于FIRST(T&#x27;)有ε，将FOLLOW(T)加入FOLLOW(F)</span><br></pre></td></tr></table></figure><hr><h2 id="实战例题-2：扩展文法计算">实战例题 2：扩展文法计算</h2><p>再来看一个更复杂的扩展文法，巩固计算规则：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E → TE&#x27;</span><br><span class="line">E&#x27; → +E | ε</span><br><span class="line">T → FT&#x27;</span><br><span class="line">T&#x27; → T | ε</span><br><span class="line">F → PF&#x27;</span><br><span class="line">F&#x27; → *F&#x27; | ε</span><br><span class="line">P → (E) | a | b | ^</span><br></pre></td></tr></table></figure><h3 id="第一步：计算所有-FIRST-集-2">第一步：计算所有 FIRST 集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FIRST(P) = &#123; (, a, b, ^ &#125;</span><br><span class="line">FIRST(F&#x27;) = &#123; *, ε &#125;</span><br><span class="line">FIRST(F) = FIRST(P) = &#123; (, a, b, ^ &#125;</span><br><span class="line">FIRST(T) = FIRST(F) = &#123; (, a, b, ^ &#125;</span><br><span class="line">FIRST(T&#x27;) = FIRST(T) ∪ &#123;ε&#125; = &#123; (, a, b, ^, ε &#125;</span><br><span class="line">FIRST(E&#x27;) = &#123; +, ε &#125;</span><br><span class="line">FIRST(E) = FIRST(T) = &#123; (, a, b, ^ &#125;</span><br></pre></td></tr></table></figure><h3 id="第二步：计算所有-FOLLOW-集-2">第二步：计算所有 FOLLOW 集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FOLLOW(E) = &#123; #, ) &#125;</span><br><span class="line">FOLLOW(E&#x27;) = FOLLOW(E) = &#123; #, ) &#125;</span><br><span class="line">FOLLOW(T) = FIRST(E&#x27;) ∪ FOLLOW(E) = &#123; +, #, ) &#125;</span><br><span class="line">FOLLOW(T&#x27;) = FOLLOW(T) = &#123; +, #, ) &#125;</span><br><span class="line">FOLLOW(F) = FIRST(T&#x27;) ∪ FOLLOW(T) = &#123; (, a, b, ^, +, #, ) &#125;</span><br><span class="line">FOLLOW(F&#x27;) = FOLLOW(F) = &#123; (, a, b, ^, +, #, ) &#125;</span><br><span class="line">FOLLOW(P) = FIRST(F&#x27;) ∪ FOLLOW(F) = &#123; *, (, a, b, ^, +, #, ) &#125;</span><br></pre></td></tr></table></figure><hr><h2 id="📸-手写笔记对照">📸 手写笔记对照</h2><p>为了方便大家对照，附上我的手写推导过程：</p><p><img src="2.jpg" alt="FIRST与FOLLOW集手写笔记1"><br><img src="1.jpg" alt="FIRST与FOLLOW集手写笔记1"></p><hr><h2 id="易错点总结">易错点总结</h2><ol><li><strong>FIRST 集</strong>：只有当产生式的所有右部符号都能推导出 <code>ε</code> 时，才将 <code>ε</code> 加入 FIRST 集。</li><li><strong>FOLLOW 集</strong>：FOLLOW 集里永远不会包含 <code>ε</code>，因为它描述的是“紧跟在右边的终结符”。</li><li><strong>传递性</strong>：在计算 FOLLOW 集时，注意规则的传递性，例如 <code>FOLLOW(E')</code> 会继承 <code>FOLLOW(E)</code> 的内容。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理，总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo报错及解决方案</title>
       <link href="/2026/01/27/hexo%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
       <url>/2026/01/27/hexo%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="页面markdown公式无法正常显示">页面markdown公式无法正常显示</h2><p>在博文中想要正确渲染显示markdown格式的公式，需要进行如下步骤：</p><ol><li>打开<code>_config.butterfly.yml</code>文件，修改如下配置，打开<code>mathjax</code>工具 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  use: mathjax</span><br><span class="line">  per_page: true</span><br><span class="line">  hide_scrollbar: false</span><br><span class="line"></span><br><span class="line">  mathjax:</span><br><span class="line">    enableMenu: true</span><br><span class="line">    tags: none</span><br><span class="line"></span><br><span class="line">  katex:</span><br><span class="line">    copy_tex: false</span><br></pre></td></tr></table></figure></li><li>在需要渲染公式的文章顶部添加<code>mathjax: true</code></li></ol><p><span style="color: red;">注意：</span>hexo只能正确渲染<code>$$...$$</code>格式的markdown公式，无法正确识别<code>\[ ... \]</code>格式的<br><span style="color: red;">注意：</span>想要正常渲染md文件，一定要有hexo-renderer-markdown-it，不可以<code>uninstall</code>,否则你将收获一个404错误页面😭😭😭</p><h2 id="博文中图片无法显示">博文中图片无法显示</h2><p>在博文中无法正确显示图片，其实本质原因就是Hexo 只能读取 source 目录下的文件，现提供解决方案：</p><ol><li><p>在<code>_config.yml</code>文件中开启文章资源文件夹：<code>post_asset_folder: true</code><br>新建文章后结构如下：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post.md</span><br><span class="line">post/</span><br><span class="line">└── img.png</span><br></pre></td></tr></table></figure></li><li><p>文章中直接写：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](img.png)</span><br></pre></td></tr></table></figure></li></ol><p>这里一定要注意使用的相对路径中不能有<code>\</code>,得使用<code>/</code>;其次不能写<code>source</code>。不如，对于一张相对地址为<code>source\img\卷积\image-1.png</code>的图片，应该写为<code>/img/卷积/image-1.png</code></p><p>如果不想使用<code>post_asset_folder: true</code>，只需将所需图片放在<code>source</code>下，正确引用路径即可</p><p><span style="color: red;">注意：</span>引用的图片在vscode等本地是无法正常预览的，但在hexo网页中是正常显示的</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="页面markdown公式无法正常显示">页面markdown公式无法正常显示</h2><p>在博文中想要正确渲染显示markdown格式的公式，需要进行如下步骤：</p><ol><li>打开<code>_config.butterfly.yml</code>文件，修改如下配置，打开<code>mathjax</code>工具 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  use: mathjax</span><br><span class="line">  per_page: true</span><br><span class="line">  hide_scrollbar: false</span><br><span class="line"></span><br><span class="line">  mathjax:</span><br><span class="line">    enableMenu: true</span><br><span class="line">    tags: none</span><br><span class="line"></span><br><span class="line">  katex:</span><br><span class="line">    copy_tex: false</span><br></pre></td></tr></table></figure></li><li>在需要渲染公式的文章顶部添加<code>mathjax: true</code></li></ol><p><span style="color: red;">注意：</span>hexo只能正确渲染<code>$$...$$</code>格式的markdown公式，无法正确识别<code>\[ ... \]</code>格式的<br><span style="color: red;">注意：</span>想要正常渲染md文件，一定要有hexo-renderer-markdown-it，不可以<code>uninstall</code>,否则你将收获一个404错误页面😭😭😭</p><h2 id="博文中图片无法显示">博文中图片无法显示</h2><p>在博文中无法正确显示图片，其实本质原因就是Hexo 只能读取 source 目录下的文件，现提供解决方案：</p><ol><li><p>在<code>_config.yml</code>文件中开启文章资源文件夹：<code>post_asset_folder: true</code><br>新建文章后结构如下：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post.md</span><br><span class="line">post/</span><br><span class="line">└── img.png</span><br></pre></td></tr></table></figure></li><li><p>文章中直接写：</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](img.png)</span><br></pre></td></tr></table></figure></li></ol><p>这里一定要注意使用的相对路径中不能有<code>\</code>,得使用<code>/</code>;其次是引用的地址，直接用最深层的相对地址即可。</p><p>如果不想使用<code>post_asset_folder: true</code>，只需将所需图片放在<code>source</code>下，正确引用路径即可，如对于一张相对地址为<code>source\img\卷积\image-1.png</code>的图片，应该写为<code>/img/卷积/image-1.png</code>（所以还是上面那个方法好，方便）</p><p><span style="color: red;">注意：</span>引用的图片在vscode等本地是无法正常预览的，但在hexo网页中是正常显示的</p>]]></content>
       
       
       <categories>
